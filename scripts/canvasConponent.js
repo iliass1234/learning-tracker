@@ -10,15 +10,17 @@ export class CanvasConponent {
         this.innerContainer.style = 'background-color: transparent;width: 1000px; max-width: 1000px; min-width: 300px; height: 100%; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;'
         this.canvas.id = 'canvas';
 
-
     }
     draw(whereToDraw){
         this.canvas.appendChild(this.innerContainer)
         whereToDraw.appendChild(this.canvas);
     }
     addItem(item){
-
-        let place = document.getElementById('canvas-inner-container');
+        let place = document.getElementById(this.innerContainerId);
         place.appendChild(item);
+    }
+    addItemToCanvas(item){
+        let canvas = document.getElementById(this.theId);
+        canvas.appendChild(item);
     }
 }
