@@ -1,5 +1,5 @@
 import { NavBar } from "/scripts/navBarComponent.js";
-import { CanvasConponent } from "/scripts/canvasConponent.js";
+import { CanvasConponent } from "/scripts/canvasComponent.js";
 
 let body = document.body;
 let navBar = new NavBar();
@@ -10,15 +10,16 @@ navBar.draw(body);
 canvasConponent.draw(body);
 
 let testDiv = document.createElement('div');
-testDiv.style = 'max-width: 300px; max-height: 800px; height: 400px; background-color: red; flex: 0.25 1 300px; border-radius: 5px;';
+
+testDiv.style = ' max-width: 300px; max-height: 800px; height: 400px; background-color: transparent; flex: 0.25 1 300px;border: 1px solid gray; border-radius: 10px;';
 canvasConponent.addItemToCanvas(testDiv);
 
-for (let i = 0; i < 42; i++) {
+for (let i = 0; i < 100; i++) {
     let divition = document.createElement('div');
     divition.onmouseover = () => {divition.style.backgroundColor = 'gray'};
     divition.onmouseleave = () => {divition.style.backgroundColor = 'lightgray'};
 
-    divition.style = 'transition: 250ms; border-radius: 5px; background-color: lightgray; max-height: 200px; height: 100px; width: 150px;';
+    divition.style = 'border: 1px solid gray; transition: 250ms; border-radius: 5px; background-color: transparent; height: 100px; min-width: 150px;';
     canvasConponent.addItem(divition);
 }
 
