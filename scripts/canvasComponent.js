@@ -7,7 +7,7 @@ export class CanvasConponent {
         this.innerContainer = document.createElement('div');
         this.innerContainer.id = 'canvas-inner-container';
         this.canvas.style = 'margin: 10px 0px; display: flex;flex-wrap: wrap; justify-content: center; min-height:300px ; height: calc(100%); width: 100%; background-color: rgb(255, 255, 255); gap: 0px';
-        this.innerContainer.style = 'order: 2; background-color: transparent;width: 1000px; max-width: 2000px; min-width: 300px; height: 100%; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;'
+        this.innerContainer.style = 'order: 2; background-color: transparent; max-width: 1500px; min-width: 300px; height: 100%; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;'
         this.canvas.id = 'canvas';
 
     }
