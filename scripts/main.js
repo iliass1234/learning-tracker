@@ -43,9 +43,25 @@ leftSideComponent.draw(body);
     canvasConponent.addItem(divition);
 } */
 
-for (let i = 0; i < 20; i++) {
+for (let i = 0; i < 6; i++) {
     let newCard = new NoteCard()
+    newCard.title = 'hi';
+    newCard.text = 'test text to see how this gonna turn out'
+    
+    let jj = new NoteCard()
+    jj.title = 'Hello';
+    jj.text = `test text to see howext to see
+     howext to see howext to sext to see howext to see howee howext 
+    to see how this gonna turn outext to see how
+    ext to see howext to see howext to see how
+    ext to see howext to see howext to see howext to see how
+    ext to see howext to see howext to see howext to see how
+    ext to see howext to see howext to see howext to see how
+    ext to see howext to see howext to see howext to see how
+    ext to see howext to see howext to see howext to see how
+    ext to see howext to see howext to see howext to see how`;
 
+    jj.draw(CanvasConponent.innerContainerId)
     newCard.draw(CanvasConponent.innerContainerId)
     
 }

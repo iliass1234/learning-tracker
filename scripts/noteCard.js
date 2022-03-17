@@ -22,7 +22,7 @@ export class NoteCard {
         this.#text.id = 'card-text';
         this.#bottomSection.id = 'card-bottom-section';
 
-        this.#card.style = 'transition: 150ms; margin-left: 10px;flex: 1 1 235px; border: 1px solid rgba(0,0,0,0.3); border-radius: 10px; height: relative; max-height: 400px; min-height: 100px;';
+        this.#card.style = 'transition: 150ms; flex: 1 1 235px; border: 1px solid rgba(0,0,0,0.2); border-radius: 10px; height: auto; max-height: 400px; min-height: 100px;';
         this.#title.style = 'margin-left: 20px; margin-bottom: 40px;margin-top: 30px;font-family: monospace;';
         this.#text.style = 'margin-left: 20px; font-size: 15px;color: rgb(90,90,90); font-family: sans-serif;';
         this.#bottomSection.style = 'margin-bottom : 5px; height: 40px; width: 100%; background-color: #dddddd;';
@@ -35,7 +35,7 @@ export class NoteCard {
 
         let shownText = this.text;
         if (this.text.length > 300) {
-            shownText = this.text.slice(0,30).concat('...')
+            shownText = this.text.slice(0,300).concat('...')
  
         }
 
