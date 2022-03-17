@@ -6,7 +6,7 @@ let body = document.body;
 let navBar = new NavBar();
 let canvasConponent = new CanvasConponent();
 
-body.style = 'margin: 0 ;display: grid; grid-template-columns: 50px calc(100% - 50px) ;';
+body.style = 'margin: 0 ;display: grid; grid-template-columns: 60px calc(100% - 60px) ;';
 navBar.draw(body);
 canvasConponent.draw(body);
 
