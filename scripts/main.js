@@ -5,19 +5,26 @@ import { NoteCard } from "/scripts/noteCard.js";
 import { NoteGeneratorComponent } from "/scripts/noteGeneratorComponent.js";
 
 let body = document.body;
-let navBar = new NavBar();
-let canvasConponent = new CanvasConponent();
-
 body.style = 'margin: 0 ;display: grid; grid-template-columns: 60px calc(100% - 60px) ;';
+
+let navBar = new NavBar();
 navBar.draw(body);
+
+let enterNote = new NoteGeneratorComponent()
+enterNote.draw(body)
+
+let canvasConponent = new CanvasConponent();
 canvasConponent.draw(body);
 
 navBar.addBtn('hello', 'hello');
 navBar.addBtn('world', 'world');
 
+
+
 let leftSideComponent = new LeftSideComponent();
 canvasConponent.theId;
 leftSideComponent.draw(body);
+leftSideComponent.changeColor();
 
 /* for (let i = 0; i < 100; i++) {
     let random = Math.floor((Math.random()*(400-200))+200);
@@ -42,11 +49,10 @@ leftSideComponent.draw(body);
     divition.append(title, text)
     divition.style = 'padding: 5px; border: 1px solid rgba(0,0,0,0.3); transition: 250ms; border-radius: 10px; background-color: transparent; max-height: 100%; height: '+random+'px;flex: 1 1 200px; min-width: 50px;';
     canvasConponent.addItem(divition);
+    
+    
 } */
-
-let enterNote = new NoteGeneratorComponent()
-enterNote.draw(CanvasConponent.theId)
-
+/* 
 for (let i = 0; i < 6; i++) {
     let newCard = new NoteCard()
     newCard.title = 'hi';
@@ -63,5 +69,4 @@ for (let i = 0; i < 6; i++) {
     newCard.draw(CanvasConponent.innerContainerId)
     
 }
-
-
+ */
