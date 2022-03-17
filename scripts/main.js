@@ -46,7 +46,7 @@ leftSideComponent.draw(body);
 for (let i = 0; i < 20; i++) {
     let newCard = new NoteCard()
 
-    newCard.draw('canvas')
+    newCard.draw(CanvasConponent.innerContainerId)
     
 }
 

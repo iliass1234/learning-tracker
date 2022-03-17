@@ -1,5 +1,5 @@
 export class CanvasConponent {
-    
+
     #canvas = document.createElement('main');
     #innerContainer = document.createElement('div');
     #theId = 'canvas';
@@ -26,9 +26,9 @@ export class CanvasConponent {
         canvas.appendChild(item);
     }
     static get theId(){
-        return this.theId;
+        return 'canvas';
     }
     static get innerContainerId(){
-        return this.innerContainerId;
+        return 'canvas-inner-container';
     }
 }
