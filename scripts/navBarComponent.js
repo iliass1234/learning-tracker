@@ -5,7 +5,7 @@ export class NavBar {
         this.childrenContainer = document.createElement('div');
 
         this.nav.id = 'navBar';
-        this.nav.style = 'height: 50px; display: flex; justify-content: center; align-items: center; width: 100%; background-color: black;';
+        this.nav.style = 'grid-column: 1/3;height: 50px; display: flex; justify-content: center; align-items: center; width: 100%; background-color: black;';
         this.childrenContainer.style = 'display: flex; justify-content: center; align-items: center; height: 100%;width: 100%; max-width: 900px; background-color: transparent;'
         this.nav.appendChild(this.childrenContainer);
     }
@@ -20,5 +20,8 @@ export class NavBar {
         this.navBtn.id = theId;
         this.navBtn.style = ' border-radius: 5px; margin-left: 5px; padding: 8px; border: none; color: white; background-color: blue;';
         this.childrenContainer.appendChild(this.navBtn);
+    }
+    changeColor(theColor){
+        document.getElementById('navBar').style.backgroundColor = theColor;
     }
 }
