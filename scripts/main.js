@@ -2,6 +2,7 @@ import { NavBar } from "/scripts/navBarComponent.js";
 import { CanvasConponent } from "/scripts/canvasComponent.js";
 import { LeftSideComponent } from "/scripts/leftSideComponent.js";
 import { NoteCard } from "/scripts/noteCard.js";
+import { NoteGeneratorComponent } from "/scripts/noteGeneratorComponent.js";
 
 let body = document.body;
 let navBar = new NavBar();
@@ -43,6 +44,9 @@ leftSideComponent.draw(body);
     canvasConponent.addItem(divition);
 } */
 
+let enterNote = new NoteGeneratorComponent()
+enterNote.draw(CanvasConponent.theId)
+
 for (let i = 0; i < 6; i++) {
     let newCard = new NoteCard()
     newCard.title = 'hi';
@@ -53,13 +57,7 @@ for (let i = 0; i < 6; i++) {
     jj.text = `test text to see howext to see
      howext to see howext to sext to see howext to see howee howext 
     to see how this gonna turn outext to see how
-    ext to see howext to see howext to see how
-    ext to see howext to see howext to see howext to see how
-    ext to see howext to see howext to see howext to see how
-    ext to see howext to see howext to see howext to see how
-    ext to see howext to see howext to see howext to see how
-    ext to see howext to see howext to see howext to see how
-    ext to see howext to see howext to see howext to see how`;
+    ext to see howext to see howext to see ho`;
 
     jj.draw(CanvasConponent.innerContainerId)
     newCard.draw(CanvasConponent.innerContainerId)
