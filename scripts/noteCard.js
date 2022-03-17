@@ -6,6 +6,8 @@ export class NoteCard {
     #title = document.createElement('h2');
     #text = document.createElement('p');
     #bottomSection = document.createElement('section');
+    activeState = false;
+
 
     constructor(){
 
@@ -13,6 +15,7 @@ export class NoteCard {
         this.text = ` add some text here `;
 
         this.#card.id = 'card';
+        this.#card.className = 'card';
         this.#title.id = 'card-title';
         this.#text.id = 'card-text';
         this.#bottomSection.id = 'card-bottom-section';
@@ -25,9 +28,11 @@ export class NoteCard {
     draw(whereToDrawId){
 
         this.#card.onclick = ()=>{
+            this.activeState = true;
             this.#card.style.position = 'fixed';
-            this.#card.style.width = '500px';
+            this.#card.style.width = '600px';
             this.#card.style.top = '20%';
+            this.#card.style.zIndex = '10';
         }
 
         this.#card.onmouseover = () => {this.#card.style.boxShadow = '0px 2px 5px rgb(200,200,200)';}
@@ -41,9 +46,11 @@ export class NoteCard {
 
         this.#title.innerText = this.title;
         this.#text.innerText = shownText;
-        this.#card.append(this.#title, this.#text, this.#bottomSection);
+        this.#card.append( this.#title, this.#text, this.#bottomSection);
         document.getElementById(whereToDrawId).appendChild(this.#card);
     }
-
+    static activeState(){
+        return this.activeState;
+    }
 
 }
