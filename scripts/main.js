@@ -1,6 +1,7 @@
 import { NavBar } from "/scripts/navBarComponent.js";
 import { CanvasConponent } from "/scripts/canvasComponent.js";
-import { LeftSideComponent } from "./leftSideComponent.js";
+import { LeftSideComponent } from "/scripts/leftSideComponent.js";
+import { NoteCard } from "/scripts/noteCard.js";
 
 let body = document.body;
 let navBar = new NavBar();
@@ -14,11 +15,10 @@ navBar.addBtn('hello', 'hello');
 navBar.addBtn('world', 'world');
 
 let leftSideComponent = new LeftSideComponent();
-canvasConponent.theId
+canvasConponent.theId;
 leftSideComponent.draw(body);
-leftSideComponent.changeColor('rgba(220,180,220,1)')
 
-for (let i = 0; i < 100; i++) {
+/* for (let i = 0; i < 100; i++) {
     let random = Math.floor((Math.random()*(400-200))+200);
     let divition = document.createElement('div');
 
@@ -39,8 +39,15 @@ for (let i = 0; i < 100; i++) {
     title.innerText = 'hello world!';
     title.style.marginLeft = '10px';
     divition.append(title, text)
-    divition.style = 'padding: 5px; border: 1px solid rgba(0,0,0,0.3); transition: 250ms; border-radius: 10px; background-color: transparent; max-height: 100%; height: '+random+'px;flex: 1 1 200px; min-width: 50px; width: 250px;';
+    divition.style = 'padding: 5px; border: 1px solid rgba(0,0,0,0.3); transition: 250ms; border-radius: 10px; background-color: transparent; max-height: 100%; height: '+random+'px;flex: 1 1 200px; min-width: 50px;';
     canvasConponent.addItem(divition);
+} */
+
+for (let i = 0; i < 20; i++) {
+    let newCard = new NoteCard()
+
+    newCard.draw('canvas')
+    
 }
 
 

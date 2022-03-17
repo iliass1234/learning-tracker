@@ -3,7 +3,7 @@ export class LeftSideComponent {
     constructor(){
         this.component = document.createElement('aside');
         this.component.id = 'aside'
-        this.component.style = 'position:fixed; grid-column: 1/1; display: flex; flex-direction: column; width: 60px; height: 100vh; background-color: red;';
+        this.component.style = 'border-right: 1px solid rgba(0,0,0,0.3); position:fixed; grid-column: 1/1; display: flex; flex-direction: column; width: 60px; height: 100vh; background-color: white;';
 
     }
     draw(whereToDraw){
