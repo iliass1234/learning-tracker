@@ -21,10 +21,8 @@ enterNote.draw(body);
 let canvasConponent = new CanvasConponent();
 canvasConponent.draw(body);
 
-navBar.addBtn('hello', 'hello');
-navBar.addBtn('world', 'world');
 
-
+navBar.addSearchBar()
 
 let leftSideComponent = new LeftSideComponent();
 canvasConponent.theId;
@@ -62,13 +60,4 @@ for (let i = 0; i < 6; i++) {
     
 }
 
-let cards = document.querySelectorAll('.card')
-
-cards.forEach((card)=>{
-
-    card.mouseleave = function (){
-        console.log('clicked')
-        is_a_card_clicked = true;    
-    }
-
-})
+let cards = document.querySelectorAll('.card');
