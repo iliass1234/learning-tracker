@@ -60,11 +60,11 @@ darkBackground();
     
 }
  */
-localStorage.clear()
+//localStorage.clear()
 for(let i = 1; i <= Number(localStorage.getItem('last-note')); i++){
     let note = new NoteCard();
 
-    let last =JSON.stringify(localStorage.getItem('one-note'));
+    let last = localStorage.getItem(`${i}-note`);
 //    console.log(localStorage.getItem('one-note'));
 
     let noteJason = JSON.parse(last); 

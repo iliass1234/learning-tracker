@@ -38,35 +38,33 @@ export class NoteGeneratorComponent {
 
         this.#closeBtn.onclick = (e)=>{
             e.stopPropagation();
-            
+            let theLastNoteNumber = Number(localStorage.getItem('last-note')) ?? 0 ;
+
             let newCard = new NoteCard();
             let title = document.getElementById(this.#innerTitle.id).value;
             let text = document.getElementById(this.#innerP.id).value;
             newCard.title = title;
             newCard.text = text;
             newCard.draw(CanvasConponent.innerContainerId);
-            let noteObj = `{ 'title':'${title}', 'text':'${text}' }`;
+
+
+            var noteObj = `{"id": "${theLastNoteNumber}", "title":"${title}", "text": "${text}" }`;
+
             
             document.querySelector('#note-taker > #innerTitle').placeholder = 'Take a note..';
             let allFirstContainer = document.querySelector('#note-taker'); 
             
-            allFirstContainer.removeChild(document.querySelector('#note-taker > #toolsContainer'))
-            allFirstContainer.removeChild(document.querySelector('#note-taker > #innerP'))
-            allFirstContainer.style.height = '45px'
+            allFirstContainer.removeChild(document.querySelector('#note-taker > #toolsContainer'));
+            allFirstContainer.removeChild(document.querySelector('#note-taker > #innerP'));
+            allFirstContainer.style.height = '45px';
             
-            localStorage.setItem('one-note', noteObj);
+            
+            theLastNoteNumber++ ;
+            localStorage.setItem(`${theLastNoteNumber}-note`, noteObj);
+            localStorage.setItem('last-note',`${theLastNoteNumber}`);
 
-            if (!localStorage.getItem('last-note')) {
-                localStorage.setItem('last-note', '1');
-                console.log(localStorage.getItem('last-note'))
-
-                return
-            }else{
-                let theLastNumber = Number(localStorage.getItem('last-note'))
-                theLastNumber++ ;
-                console.log(localStorage.getItem('last-note'))
-                localStorage.setItem('last-note',`${theLastNumber}`)
-            }
+            console.log(localStorage.getItem('last-note'));
+            
 
         }    
         
