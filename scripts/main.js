@@ -3,6 +3,7 @@ import { CanvasConponent } from "/scripts/canvasComponent.js";
 import { LeftSideComponent } from "/scripts/leftSideComponent.js";
 import { NoteCard } from "/scripts/noteCard.js";
 import { NoteGeneratorComponent } from "/scripts/noteGeneratorComponent.js";
+import { PinnedSection } from "/scripts/pinnedSection.js";
 
 let is_a_card_clicked = false;
 
@@ -17,6 +18,9 @@ navBar.draw(body);
 
 let enterNote = new NoteGeneratorComponent();
 enterNote.draw(body);
+
+let pinnedSection = new PinnedSection();
+pinnedSection.draw(body);
 
 let canvasConponent = new CanvasConponent();
 canvasConponent.draw(body);
@@ -75,7 +79,8 @@ for(let i = 1; i <= Number(localStorage.getItem('last-note')); i++){
     note.id = noteJason.id;
 
     if (Number(note.id) === 2) {
-        console.log(note.id)
+        note.changeColor('green');
+        pinnedSection.addItem(note)
     }
 
     note.draw(CanvasConponent.innerContainerId)

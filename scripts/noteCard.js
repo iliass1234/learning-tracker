@@ -49,16 +49,25 @@ export class NoteCard {
         this.#title.innerText = this.title;
         this.#text.innerText = shownText;
         this.#card.append( this.#title, this.#text, this.#bottomSection);
+
+        if (!document.getElementById(whereToDrawId) && whereToDrawId) {
+            if (typeof whereToDrawId !== 'string') {
+                whereToDrawId.appendChild(this.#card)
+                return;
+            }
+        }
+
         document.getElementById(whereToDrawId).appendChild(this.#card);
     }
     static activeState(){
         return this.activeState;
     }
-    changeColor(){
+    changeColor(theColor){
 
+        let finalColor = theColor ?? '#f88'
         let theCard = this.#card
         if (theCard) {
-            this.#card.style.backgroundColor = 'red';
+            this.#card.style.backgroundColor = theColor;
             return true;
         }else{
             alert('change color after card being created error');

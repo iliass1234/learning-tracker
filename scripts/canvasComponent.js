@@ -9,7 +9,7 @@ export class CanvasConponent {
 
         this.#canvas.id = 'canvas';
         this.#innerContainer.id = 'canvas-inner-container';
-        this.#canvas.style = 'transition: 250ms; grid-column: 2/3; margin: 10px 0px; display: flex;flex-wrap: wrap; justify-content: center; min-height:300px ; height: calc(100%); width: calc(100%); background-color: rgb(255, 255, 255); gap: 0px';
+        this.#canvas.style = 'transition: 250ms; grid-column: 2/3; margin: 10px 0px; display: flex;flex-wrap: wrap; justify-content: center; min-height:300px ; height: calc(100%); width: calc(100%); background-color: rgba(255, 255, 255,0); gap: 0px';
         this.#innerContainer.style = 'order: 2; padding: 0px 20px; background-color: transparent; max-width: 1250px; min-width: 300px; height: 100%; display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 10px; transition: 250ms;'
 
     }
