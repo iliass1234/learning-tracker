@@ -11,8 +11,8 @@ export class PinnedSection {
         this.#container.id = 'pin-container';
         this.#pinnedSection.id = 'pin-area';
 
-        this.#container.style = 'grid-column: 2 / 3; display:flex; justify-content: center; align-items: center; height: 100%; width: 100%; background-color: red;'
-        this.#pinnedSection.style = ' padding: 20px 10px; display:flex; flex-wrap:wrap; justify-content: start; align-items: center; height: 100%; width: 100vw; max-width: 900px; background-color: blue;'
+        this.#container.style = 'grid-column: 2 / 3; display:flex; justify-content: center; align-items: center; height: 100%; width: 100%; background-color: transparent;'
+        this.#pinnedSection.style = ' padding-left: 10px; display:flex; flex-wrap:wrap; justify-content: start; align-items: center; height: 100%; width: 100vw; max-width: 900px; background-color: transparent;'
     }
 
     draw(whereToDraw){
