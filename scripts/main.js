@@ -43,7 +43,7 @@ function darkBackground(){
 darkBackground();
 
 
-for (let i = 0; i < 6; i++) {
+/* for (let i = 0; i < 6; i++) {
     let newCard = new NoteCard(state);
     newCard.title = 'hi';
     newCard.text = 'test text to see how this gonna turn out'
@@ -59,5 +59,5 @@ for (let i = 0; i < 6; i++) {
     newCard.draw(CanvasConponent.innerContainerId)
     
 }
-
+ */
 let cards = document.querySelectorAll('.card');

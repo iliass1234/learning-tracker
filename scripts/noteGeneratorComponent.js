@@ -1,3 +1,5 @@
+import { NoteCard } from "/scripts/noteCard.js"
+import { CanvasConponent } from "/scripts/canvasComponent.js"
 
 export class NoteGeneratorComponent {
     #container = document.createElement('div');
@@ -16,6 +18,7 @@ export class NoteGeneratorComponent {
         this.#allFirstContainer.style = 'margin: 30px 15px;flex: 1 1 100%; width:300px; height: 45px; max-width: 550px; background-color: white; border: 1px solid #cccccc; border-radius: 10px;';
 
         this.#innerP.placeholder = 'Take a note..';
+        this.#innerP.id = 'innerP';
         this.#innerP.style = 'margin-bottom: 10px;display: block; resize: none; border: none; max-height: 15px;margin-left: 12px;margin-top: 14px; font-family: sans-serif;'
         
         this.#container.id = 'note-taker-container';
@@ -25,16 +28,34 @@ export class NoteGeneratorComponent {
         this.#closeBtn.id = 'close-btn';
         this.#closeBtn.style = 'display: inline-block; justify-self: baseline; height: 30px; width: 80px;'
         
+        this.#innerTitle.id = 'innerTitle'
         this.#innerTitle.placeholder = 'Take a note..';
         this.#innerTitle.style = 'margin-bottom:10px ;border: none;height: 30px; max-height: 30px ;width: 100%; max-width: calc(100% - 20px);margin-left: 12px;margin-top: 7px; font-family: sans-serif;';
 
-        this.#closeBtn.onclick = ()=>{document.getElementById('note-taker').style.display = 'none';}
-        this.#toolsContainer.appendChild(this.#closeBtn);
-        this.#allFirstContainer.appendChild(this.#innerTitle);
         
     }
     draw(whereToDrawId){
 
+        this.#closeBtn.onclick = (e)=>{
+            e.stopPropagation();
+
+            let newCard = new NoteCard();
+            newCard.title = document.getElementById(this.#innerTitle.id).value;
+            newCard.text = document.getElementById(this.#innerP.id).value;
+            newCard.draw(CanvasConponent.innerContainerId);
+
+
+            document.querySelector('#note-taker > #innerTitle').placeholder = 'Take a note..';
+            let allFirstContainer = document.querySelector('#note-taker'); 
+
+            allFirstContainer.removeChild(document.querySelector('#note-taker > #toolsContainer'))
+            allFirstContainer.removeChild(document.querySelector('#note-taker > #innerP'))
+            allFirstContainer.style.height = '45px'
+        }
+        
+        this.#toolsContainer.appendChild(this.#closeBtn);
+        this.#allFirstContainer.appendChild(this.#innerTitle);
+        
         this.#allFirstContainer.onmouseover = ()=>{ this.#allFirstContainer.style.cursor = 'text'}
         this.#allFirstContainer.onclick = ()=>{
             if (this.#allFirstContainer.style.height == '130px') return;
