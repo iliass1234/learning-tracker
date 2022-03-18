@@ -65,7 +65,7 @@ darkBackground();
 }
  */
 //localStorage.clear()
-for(let i = 1; i <= Number(localStorage.getItem('last-note')); i++){
+for(let i = Number(localStorage.getItem('last-note')); i >= 1; i--){
     let note = new NoteCard();
 
     let last = localStorage.getItem(`${i}-note`);
@@ -77,6 +77,8 @@ for(let i = 1; i <= Number(localStorage.getItem('last-note')); i++){
     note.title = noteJason.title;
     note.text = noteJason.text;
     note.id = noteJason.id;
+    note.setId();
+    
     note.isPinned = noteJason.isPinned;
 
     if (note.isPinned === true) {

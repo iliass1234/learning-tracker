@@ -47,6 +47,7 @@ export class NoteGeneratorComponent {
             newCard.title = title;
             newCard.text = text;
             newCard.id = theLastNoteNumber;
+            newCard.setId();
             newCard.draw(CanvasConponent.innerContainerId);
 
 

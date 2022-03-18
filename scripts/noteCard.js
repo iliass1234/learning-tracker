@@ -26,6 +26,8 @@ export class NoteCard {
 
         this.#card.className = 'card';
         this.#title.id = 'card-title';
+        this.#card.id = 'card-id';
+        
         this.#text.id = 'card-text';
         this.#bottomSection.id = 'card-bottom-section';
 
@@ -33,6 +35,9 @@ export class NoteCard {
         this.#title.style = 'display: inline-block;margin-left: 20px; margin-bottom: 30px;margin-top: 20px;font-family: monospace;';
         this.#text.style = 'margin-left: 20px; font-size: 15px;color: rgb(90,90,90); font-family: sans-serif;';
         this.#bottomSection.style = 'transition: 500ms; opacity: 0; margin-bottom : 5px; height: 40px; width: 100%; background-color: #dddddd;';
+    }
+    setId(){
+        this.#card.id = this.id;
     }
     draw(whereToDrawId){
 
@@ -70,6 +75,7 @@ export class NoteCard {
                 newCard.text = data.text;
                 newCard.id = data.id;
                 newCard.isPinned = data.isPinned;
+                newCard.setId();
                 newCard.changeColor();
                 newCard.draw('pin-area');
 
