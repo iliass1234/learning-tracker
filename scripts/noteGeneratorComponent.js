@@ -50,7 +50,7 @@ export class NoteGeneratorComponent {
             newCard.draw(CanvasConponent.innerContainerId);
 
 
-            var noteObj = `{"id": "${theLastNoteNumber}", "title":"${title}", "text": "${text}" }`;
+            var noteObj = `{"id": "${theLastNoteNumber}", "isPinned": false, "title":"${title}", "text": "${text}" }`;
 
             
             document.querySelector('#note-taker > #innerTitle').placeholder = 'Take a note..';
