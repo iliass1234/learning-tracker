@@ -11,8 +11,8 @@ export class PinnedSection {
         this.#container.id = 'pin-container';
         this.#pinnedSection.id = 'pin-area';
 
-        this.#container.style = 'grid-column: 2 / 3; display:flex; justify-content: center; align-items: center; height: 100px; width: 100vw; background-color: red;'
-        this.#container.style = 'padding: 20px 10px; display:flex; justify-content: start; align-items: center; height: 100%; width: 100vw; max-width: 900px; background-color: green;'
+        this.#container.style = 'grid-column: 2 / 3; display:flex; justify-content: center; align-items: center; height: 100%; width: 100%; background-color: red;'
+        this.#pinnedSection.style = ' padding: 20px 10px; display:flex; flex-wrap:wrap; justify-content: start; align-items: center; height: 100%; width: 100vw; max-width: 900px; background-color: blue;'
     }
 
     draw(whereToDraw){
@@ -21,7 +21,7 @@ export class PinnedSection {
     }
 
     addItem(item){
-        let place = document.getElementById('pin-area') ?? this.#pinnedSection; 
+        let place = document.getElementById('pin-area'); 
         if (item instanceof NoteCard) {
             console.log('its a card');
             item.draw(place);

@@ -32,7 +32,7 @@ let leftSideComponent = new LeftSideComponent();
 canvasConponent.theId;
 leftSideComponent.draw(body);
 leftSideComponent.changeColor();
-
+/* 
 function darkBackground(){
 
     let blackBackground = document.createElement('div');
@@ -45,7 +45,7 @@ function darkBackground(){
 
 }
 darkBackground();
-
+ */
 
 /* for (let i = 0; i < 6; i++) {
     let newCard = new NoteCard(state);
@@ -81,7 +81,8 @@ for(let i = 1; i <= Number(localStorage.getItem('last-note')); i++){
     if (Number(note.id) === 2) {
         note.changeColor('green');
         pinnedSection.addItem(note)
+    }else{
+        note.draw(CanvasConponent.innerContainerId)
     }
 
-    note.draw(CanvasConponent.innerContainerId)
 }
