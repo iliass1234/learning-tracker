@@ -72,5 +72,11 @@ for(let i = 1; i <= Number(localStorage.getItem('last-note')); i++){
     console.log(noteJason.title);
     note.title = noteJason.title;
     note.text = noteJason.text;
+    note.id = noteJason.id;
+
+    if (Number(note.id) === 2) {
+        console.log(note.id)
+    }
+
     note.draw(CanvasConponent.innerContainerId)
 }

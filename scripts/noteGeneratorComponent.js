@@ -39,12 +39,14 @@ export class NoteGeneratorComponent {
         this.#closeBtn.onclick = (e)=>{
             e.stopPropagation();
             let theLastNoteNumber = Number(localStorage.getItem('last-note')) ?? 0 ;
+            theLastNoteNumber++ ;
 
             let newCard = new NoteCard();
             let title = document.getElementById(this.#innerTitle.id).value;
             let text = document.getElementById(this.#innerP.id).value;
             newCard.title = title;
             newCard.text = text;
+            newCard.id = theLastNoteNumber;
             newCard.draw(CanvasConponent.innerContainerId);
 
 
@@ -59,7 +61,6 @@ export class NoteGeneratorComponent {
             allFirstContainer.style.height = '45px';
             
             
-            theLastNoteNumber++ ;
             localStorage.setItem(`${theLastNoteNumber}-note`, noteObj);
             localStorage.setItem('last-note',`${theLastNoteNumber}`);
 

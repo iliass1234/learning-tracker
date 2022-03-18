@@ -11,10 +11,12 @@ export class NoteCard {
 
     constructor(){
 
+        this.isPinned = false;
+        this.id = null;
+
         this.title = 'Set title here';
         this.text = ` add some text here `;
 
-        this.#card.id = 'card';
         this.#card.className = 'card';
         this.#title.id = 'card-title';
         this.#text.id = 'card-text';
@@ -51,6 +53,18 @@ export class NoteCard {
     }
     static activeState(){
         return this.activeState;
+    }
+    changeColor(){
+
+        let theCard = this.#card
+        if (theCard) {
+            this.#card.style.backgroundColor = 'red';
+            return true;
+        }else{
+            alert('change color after card being created error');
+            return false;
+        }
+
     }
 
 }
