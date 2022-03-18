@@ -13,6 +13,6 @@ export class LeftSideComponent {
         whereToDraw.appendChild(this.component)
     }
     changeColor(theColor){
-        document.getElementById('aside').style.backgroundColor = theColor || 'red';;
+        document.getElementById('aside').style.backgroundColor = theColor || 'white';
     }
 }
