@@ -1,3 +1,5 @@
+import { PinnedSection } from "/scripts/pinnedSection.js";
+import { CanvasConponent } from "/scripts/canvasComponent.js";
 
 
 export class NoteCard {
@@ -55,23 +57,32 @@ export class NoteCard {
 
         this.#pinButton.onclick = (e)=>{
             e.stopPropagation();
+
+            let canvasComponent = document.getElementById(CanvasConponent.innerContainerId);
+            let data = localStorage.getItem(`${this.id}-note`);
+            data = JSON.parse(data);
+
             if(!this.isPinned){
                 this.isPinned = true;
-                document.body.style.backgroundColor = 'red'
-                
-                let data = localStorage.getItem(`${this.id}-note`);
-                data = JSON.parse(data);
                 data.isPinned = true;
+                let newCard = new NoteCard();
+                newCard.title = data.title;
+                newCard.text = data.text;
+                newCard.id = data.id;
+                newCard.isPinned = data.isPinned;
+                newCard.changeColor();
+                newCard.draw('pin-area');
 
-                localStorage.setItem(`${this.id}-note`, JSON.stringify(data))
-                return;
+                canvasComponent.removeChild(document.getElementById(`${this.id}`))
+
+                
+            }else{
+                this.isPinned = false;
+                data.isPinned = false;
+                document.body.style.backgroundColor = 'red'    
             }
-
-
-
-
-
-
+            
+            localStorage.setItem(`${this.id}-note`, JSON.stringify(data))
         }
 
 
@@ -99,10 +110,10 @@ export class NoteCard {
     }
     changeColor(theColor){
 
-        let finalColor = theColor ?? '#f88'
+        let finalColor = theColor ?? '#fbb';
         let theCard = this.#card
         if (theCard) {
-            this.#card.style.backgroundColor = theColor;
+            this.#card.style.backgroundColor = finalColor;
             return true;
         }else{
             alert('change color after card being created error');

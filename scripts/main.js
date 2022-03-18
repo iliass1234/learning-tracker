@@ -77,9 +77,10 @@ for(let i = 1; i <= Number(localStorage.getItem('last-note')); i++){
     note.title = noteJason.title;
     note.text = noteJason.text;
     note.id = noteJason.id;
+    note.isPinned = noteJason.isPinned;
 
-    if (Number(note.id) === 2) {
-        note.changeColor('#fbb');
+    if (note.isPinned === true) {
+        note.changeColor();
         pinnedSection.addItem(note)
     }else{
         note.draw(CanvasConponent.innerContainerId)
