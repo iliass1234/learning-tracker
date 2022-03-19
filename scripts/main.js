@@ -98,3 +98,9 @@ function displayNotes(){
 }
 
 displayNotes();
+
+
+
+
+
+export { pinnedSection }

@@ -1,5 +1,6 @@
 import { PinnedSection } from "/scripts/pinnedSection.js";
 import { CanvasConponent } from "/scripts/canvasComponent.js";
+import { pinnedSection } from "/scripts/main.js"
 
 
 export class NoteCard {
@@ -82,7 +83,7 @@ export class NoteCard {
                 console.log(oldNote,newCard.id)
                 CanvasConponent.innerContainer.removeChild(oldNote)
 
-                newCard.draw('pin-area');
+                pinnedSection.addItem(newCard);
                 
             }else{
                 document.getElementById('pin-area').removeChild(oldNote);

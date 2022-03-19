@@ -7,12 +7,12 @@ export class PinnedSection {
     #pinnedSection = document.createElement('div');
 
     constructor(){
-
+        
         this.#container.id = 'pin-container';
         this.#pinnedSection.id = 'pin-area';
 
         this.#container.style = 'grid-column: 2 / 3; display:flex; justify-content: center; align-items: center; height: 100%; width: 100%; background-color: transparent;'
-        this.#pinnedSection.style = ' padding-left: 10px; display:flex; flex-wrap:wrap; justify-content: start; gap: 10px; align-items: center; height: 100%; width: 100vw; max-width: 900px; background-color: transparent;'
+        this.#pinnedSection.style = ' padding-left: 10px; display:flex; flex-wrap:wrap; justify-content: start; gap: 10px; align-items: baseline; height: 100%; width: 100vw; max-width: 900px; background-color: transparent;'
     }
 
     draw(whereToDraw){
