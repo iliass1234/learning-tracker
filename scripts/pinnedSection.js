@@ -7,7 +7,7 @@ export class PinnedSection {
     #pinnedSection = document.createElement('div');
 
     constructor(){
-        
+        this.itemsCounter = 0;
         this.#container.id = 'pin-container';
         this.#pinnedSection.id = 'pin-area';
 
@@ -21,11 +21,18 @@ export class PinnedSection {
     }
 
     addItem(item){
-        let place = document.getElementById('pin-area'); 
+        this.itemsCounter++ ;
+        console.log(this.itemsCounter)
+        let place = document.getElementById(this.#pinnedSection.id); 
         if (item instanceof NoteCard) {
             console.log('its a card');
             item.draw(place);
 
         }
+    }
+    removeCard(card){
+        let pinArea = document.getElementById(this.#pinnedSection.id);
+        let cardToBeRemovedElement = document.getElementById(card.id)
+        pinArea.removeChild(cardToBeRemovedElement)
     }
 }
