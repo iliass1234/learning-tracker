@@ -32,10 +32,10 @@ export class NoteCard {
         this.#text.id = 'card-text';
         this.#bottomSection.id = `card-bottom-section-${this.id}`;
 
-        this.#card.style = 'transition: 150ms; flex: 1 1 235px; border: 1px solid rgba(0,0,0,0.2); border-radius: 10px; height: auto; max-width: 400px; max-height: 400px; min-height: 100px;background-color: white;';
-        this.#title.style = 'display: inline-block;margin-left: 20px; margin-bottom: 30px;margin-top: 20px;font-family: monospace;';
+        this.#card.style = 'transition: 150ms; flex: 1 1 235px; border: 1px solid rgba(0,0,0,0.2); border-radius: 10px; height: auto; max-width: 300px; max-height: 400px; min-height: 100px;background-color: white;';
+        this.#title.style = 'display: inline-block;margin-left: 20px; margin-bottom: 0px;margin-top: 20px;font-family: monospace;';
         this.#text.style = 'width: calc(100% - 20px);margin-left: 20px;  font-size: 15px;color: rgb(90,90,90); font-family: sans-serif;';
-        this.#bottomSection.style = 'transition: 500ms; opacity: 0; margin-bottom : 5px; height: 40px; width: 100%; background-color: #dddddd;';
+        this.#bottomSection.style = 'transition: 500ms; opacity: 0; margin-bottom : 5px; height: 30px; width: 100%; background-color: #dddddd;';
      }
     setId(){
         this.#card.id = this.id;
