@@ -22,11 +22,10 @@ export class PinnedSection {
         this.#container.style = 'padding-bottom: 60px;grid-column: 2 / 3; display:flex; justify-content: center; align-items: center; height: 100%; width: 100%; background-color: transparent;'
         this.#pinnedSection.style = 'padding-left: 10px; display:flex; flex-wrap:wrap; justify-content: start; gap: 10px; align-items: baseline; height: auto; width: 900px; max-width: 900px; background-color: transparent;'
 
-        this.#pinnedSection.appendChild(this.#pinnedWord)
     }
     draw(whereToDraw){
-        this.#container.appendChild(this.#pinnedSection)
-        whereToDraw.appendChild(this.#container)
+        this.#container.appendChild(this.#pinnedSection);
+        whereToDraw.appendChild(this.#container);
     }
     addItem(item){
         this.itemsCounter++ ;
