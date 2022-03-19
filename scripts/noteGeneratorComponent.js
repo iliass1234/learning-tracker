@@ -1,5 +1,5 @@
 import { NoteCard } from "/scripts/noteCard.js"
-import { CanvasConponent } from "/scripts/canvasComponent.js"
+import { CanvasComponent } from "/scripts/canvasComponent.js"
 
 export class NoteGeneratorComponent {
     #container = document.createElement('div');
@@ -48,7 +48,7 @@ export class NoteGeneratorComponent {
             newCard.text = text;
             newCard.id = theLastNoteNumber;
             newCard.setId();
-            newCard.draw(CanvasConponent.innerContainerId);
+            newCard.draw(CanvasComponent.innerContainerId);
 
 
             var noteObj = `{"id": "${theLastNoteNumber}", "isPinned": false, "title":"${title}", "text": "${text}" }`;

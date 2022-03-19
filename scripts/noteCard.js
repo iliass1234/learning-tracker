@@ -1,6 +1,6 @@
 import { PinnedSection } from "/scripts/pinnedSection.js";
-import { CanvasConponent } from "/scripts/canvasComponent.js";
-import { pinnedSection } from "/scripts/main.js"
+import { CanvasComponent } from "/scripts/canvasComponent.js";
+import { pinnedSection , canvasComponent} from "/scripts/main.js"
 
 
 export class NoteCard {
@@ -67,7 +67,6 @@ export class NoteCard {
             let data = localStorage.getItem(`${this.id}-note`);
             data = JSON.parse(data);
 
-            console.log(data, 55)
             let newCard = new NoteCard();
             newCard.title = data.title;
             newCard.text = data.text;
@@ -80,8 +79,8 @@ export class NoteCard {
                 newCard.isPinned = data.isPinned;
                 newCard.setId();
                 newCard.changeColor();
-                console.log(oldNote,newCard.id)
-                CanvasConponent.innerContainer.removeChild(oldNote)
+                console.log(oldNote,newCard.id);
+                CanvasComponent.innerContainer.removeChild(oldNote)
 
                 pinnedSection.addItem(newCard);
                 
@@ -93,7 +92,8 @@ export class NoteCard {
                 newCard.isPinned = data.isPinned;
                 newCard.setId();
 
-                newCard.draw(CanvasConponent.innerContainer);
+                console.log(newCard);
+                canvasComponent.addCard(newCard);
             }
             
             localStorage.setItem(`${this.id}-note`, JSON.stringify(data))
@@ -124,7 +124,7 @@ export class NoteCard {
     }
     changeColor(theColor){
 
-        let finalColor = theColor ?? '#fbb';
+        let finalColor = theColor ?? '#eea';
         let theCard = this.#card
         if (theCard) {
             this.#card.style.backgroundColor = finalColor;

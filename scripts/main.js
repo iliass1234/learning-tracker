@@ -1,5 +1,5 @@
 import { NavBar } from "/scripts/navBarComponent.js";
-import { CanvasConponent } from "/scripts/canvasComponent.js";
+import { CanvasComponent } from "/scripts/canvasComponent.js";
 import { LeftSideComponent } from "/scripts/leftSideComponent.js";
 import { NoteCard } from "/scripts/noteCard.js";
 import { NoteGeneratorComponent } from "/scripts/noteGeneratorComponent.js";
@@ -22,14 +22,14 @@ enterNote.draw(body);
 let pinnedSection = new PinnedSection();
 pinnedSection.draw(body);
 
-let canvasConponent = new CanvasConponent();
-canvasConponent.draw(body);
+let canvasComponent = new CanvasComponent();
+canvasComponent.draw(body);
 
 
 navBar.addSearchBar()
 
 let leftSideComponent = new LeftSideComponent();
-canvasConponent.theId;
+CanvasComponent.theId;
 leftSideComponent.draw(body);
 leftSideComponent.changeColor();
 /* 
@@ -59,8 +59,8 @@ darkBackground();
     to see how this gonna turn outext to see how
     ext to see howext to see howext to see ho`;
 
-    jj.draw(CanvasConponent.innerContainerId)
-    newCard.draw(CanvasConponent.innerContainerId)
+    jj.draw(CanvasComponent.innerContainerId)
+    newCard.draw(CanvasComponent.innerContainerId)
     
 }
  */
@@ -89,7 +89,7 @@ function displayNotes(){
             note.changeColor();
             pinnedSection.addItem(note);
         }else{
-            note.draw(CanvasConponent.innerContainerId);
+            note.draw(CanvasComponent.innerContainerId);
         }
     }
     
@@ -103,4 +103,4 @@ displayNotes();
 
 
 
-export { pinnedSection }
+export { pinnedSection , canvasComponent }

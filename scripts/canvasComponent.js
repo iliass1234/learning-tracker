@@ -1,4 +1,4 @@
-export class CanvasConponent {
+export class CanvasComponent {
 
     #canvas = document.createElement('main');
     #innerContainer = document.createElement('div');
@@ -18,8 +18,11 @@ export class CanvasConponent {
         whereToDraw.appendChild(this.#canvas);
     }
     addItem(item){
-        let place = document.getElementById(this.#innerContainerId);
+        let place = document.getElementById('canvas-inner-container');
         place.appendChild(item);
+    }
+    addCard(card){
+        card.draw(this.#innerContainerId)
     }
     addItemToCanvas(item){
         let canvas = document.getElementById(this.#theId);
