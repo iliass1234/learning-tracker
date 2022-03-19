@@ -65,27 +65,36 @@ darkBackground();
 }
  */
 //localStorage.clear()
-for(let i = Number(localStorage.getItem('last-note')); i >= 1; i--){
-    let note = new NoteCard();
-
-    let last = localStorage.getItem(`${i}-note`);
-//    console.log(localStorage.getItem('one-note'));
-
-    let noteJason = JSON.parse(last); 
-    console.log(noteJason);
-    console.log(noteJason.title);
-    note.title = noteJason.title;
-    note.text = noteJason.text;
-    note.id = noteJason.id;
-    note.setId();
+function displayNotes(){
     
-    note.isPinned = noteJason.isPinned;
-
-    if (note.isPinned === true) {
-        note.changeColor();
-        pinnedSection.addItem(note)
-    }else{
-        note.draw(CanvasConponent.innerContainerId)
+    
+    for(let i = Number(localStorage.getItem('last-note')); i >= 1; i--){
+        let note = new NoteCard();
+        
+        let last = localStorage.getItem(`${i}-note`);
+        //    console.log(localStorage.getItem('one-note'));
+        console.log(last)
+    if (last) {
+        
+        let noteJason = JSON.parse(last); 
+        note.title = noteJason.title;
+        note.text = noteJason.text;
+        note.id = noteJason.id;
+        note.setId()
+        //note.setId();
+        
+        note.isPinned = noteJason.isPinned;
+        
+        if (note.isPinned === true) {
+            note.changeColor();
+            pinnedSection.addItem(note);
+        }else{
+            note.draw(CanvasConponent.innerContainerId);
+        }
     }
+    
+}
 
 }
+
+displayNotes();

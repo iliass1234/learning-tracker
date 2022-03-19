@@ -26,7 +26,7 @@ export class NoteCard {
 
         this.#card.className = 'card';
         this.#title.id = 'card-title';
-        this.#card.id = 'card-id';
+        this.#card.id = 'none';
         
         this.#text.id = 'card-text';
         this.#bottomSection.id = 'card-bottom-section';
@@ -35,9 +35,9 @@ export class NoteCard {
         this.#title.style = 'display: inline-block;margin-left: 20px; margin-bottom: 30px;margin-top: 20px;font-family: monospace;';
         this.#text.style = 'margin-left: 20px; font-size: 15px;color: rgb(90,90,90); font-family: sans-serif;';
         this.#bottomSection.style = 'transition: 500ms; opacity: 0; margin-bottom : 5px; height: 40px; width: 100%; background-color: #dddddd;';
-    }
+     }
     setId(){
-        this.#card.id = this.id;
+        return this.#card.id = this.id;
     }
     draw(whereToDrawId){
 
@@ -63,35 +63,42 @@ export class NoteCard {
         this.#pinButton.onclick = (e)=>{
             e.stopPropagation();
 
-            let canvasComponent = document.getElementById(CanvasConponent.innerContainerId);
             let data = localStorage.getItem(`${this.id}-note`);
             data = JSON.parse(data);
 
+            console.log(data, 55)
+            let newCard = new NoteCard();
+            newCard.title = data.title;
+            newCard.text = data.text;
+            newCard.id = data.id;
+            let oldNote = document.getElementById(`${this.id}`);
+            
             if(!this.isPinned){
                 this.isPinned = true;
                 data.isPinned = true;
-                let newCard = new NoteCard();
-                newCard.title = data.title;
-                newCard.text = data.text;
-                newCard.id = data.id;
                 newCard.isPinned = data.isPinned;
                 newCard.setId();
                 newCard.changeColor();
+                console.log(oldNote,newCard.id)
+                CanvasConponent.innerContainer.removeChild(oldNote)
+
                 newCard.draw('pin-area');
-
-                canvasComponent.removeChild(document.getElementById(`${this.id}`))
-
                 
             }else{
+                document.getElementById('pin-area').removeChild(oldNote);
+
                 this.isPinned = false;
                 data.isPinned = false;
-                document.body.style.backgroundColor = 'red'    
+                newCard.isPinned = data.isPinned;
+                newCard.setId();
+
+                newCard.draw(CanvasConponent.innerContainer);
             }
             
             localStorage.setItem(`${this.id}-note`, JSON.stringify(data))
         }
 
-
+        console.log(this.text)
         let shownText = this.text;
         if (this.text.length > 300) {
             shownText = this.text.slice(0,300).concat('...')

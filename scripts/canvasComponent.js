@@ -31,4 +31,10 @@ export class CanvasConponent {
     static get innerContainerId(){
         return 'canvas-inner-container';
     }
+    static get innerContainer(){
+        return document.getElementById('canvas-inner-container');
+    }
+    static get canvas(){
+        return document.getElementById('canvas');
+    }
 }
