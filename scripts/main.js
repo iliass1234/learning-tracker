@@ -102,5 +102,4 @@ displayNotes();
 
 
 
-
 export { pinnedSection , canvasComponent }

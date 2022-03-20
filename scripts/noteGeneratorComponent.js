@@ -19,7 +19,7 @@ export class NoteGeneratorComponent {
 
         this.#innerP.placeholder = 'Take a note..';
         this.#innerP.id = 'innerP';
-        this.#innerP.style = 'overflow: visible; margin-bottom: 10px; width: calc(100% - 30px); display: block; border: none; resize: vertical; max-height: auto;margin-left: 12px;margin-top: 14px; font-family: sans-serif;'
+        this.#innerP.style = 'min-height: 100px;overflow: visible; margin-bottom: 10px; width: calc(100% - 30px); display: block; border: none; resize: vertical; max-height: auto; margin-left: 12px;margin-top: 14px; font-family: sans-serif;'
         
         this.#container.id = 'note-taker-container';
         this.#container.style = 'margin-top: 60px; grid-column: 2/3; background-color: white; height: 100%; width: 100%; display: flex; justify-content: center;';
