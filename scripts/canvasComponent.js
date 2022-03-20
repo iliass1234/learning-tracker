@@ -22,7 +22,7 @@ export class CanvasComponent {
         place.appendChild(item);
     }
     addCard(card){
-        card.draw(this.#innerContainerId)
+        card.draw(this.#innerContainerId);
     }
     addItemToCanvas(item){
         let canvas = document.getElementById(this.#theId);

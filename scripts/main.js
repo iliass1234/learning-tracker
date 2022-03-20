@@ -74,7 +74,7 @@ function displayNotes(){
         let last = localStorage.getItem(`${i}-note`);
         //    console.log(localStorage.getItem('one-note'));
         console.log(last)
-    if (last) {
+    if (last){
         
         let noteJason = JSON.parse(last); 
         note.title = noteJason.title;
