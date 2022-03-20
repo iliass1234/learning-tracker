@@ -12,14 +12,14 @@ export class NoteGeneratorComponent {
 
     constructor(){
         this.#toolsContainer.id = 'toolsContainer';
-        this.#toolsContainer.style = 'display: flex; justify-content: end;height: 30px; background-color: #ddd;'
+        this.#toolsContainer.style = ' display: flex; justify-content: end;height: 30px; background-color: #ddd;'
 
         this.#allFirstContainer.id = 'note-taker';
-        this.#allFirstContainer.style = 'margin: 30px 15px;flex: 1 1 100%; width:300px; height: 45px; max-width: 550px; background-color: white; border: 1px solid #cccccc; border-radius: 10px;';
+        this.#allFirstContainer.style = ' margin: 30px 15px;flex: 1 1 100%; width:300px; height: 45px; max-width: 550px; background-color: white; border: 1px solid #cccccc; border-radius: 10px;';
 
         this.#innerP.placeholder = 'Take a note..';
         this.#innerP.id = 'innerP';
-        this.#innerP.style = 'min-height: 100px;overflow: visible; margin-bottom: 10px; width: calc(100% - 30px); display: block; border: none; resize: vertical; max-height: auto; margin-left: 12px;margin-top: 14px; font-family: sans-serif;'
+        this.#innerP.style = 'height: 100px;overflow: visible; margin-bottom: 10px; width: calc(100% - 30px); display: block; border: none; resize: vertical; max-height: auto; margin-left: 12px;margin-top: 14px; font-family: sans-serif;'
         
         this.#container.id = 'note-taker-container';
         this.#container.style = 'margin-top: 60px; grid-column: 2/3; background-color: white; height: 100%; width: 100%; display: flex; justify-content: center;';
@@ -62,10 +62,7 @@ export class NoteGeneratorComponent {
             
             localStorage.setItem(`${theLastNoteNumber}-note`, noteObj);
             localStorage.setItem('last-note',`${theLastNoteNumber}`);
-
             console.log(localStorage.getItem('last-note'));
-            
-
         }    
         
         this.#toolsContainer.appendChild(this.#closeBtn);
