@@ -17,10 +17,10 @@ export class PinnedSection {
 
         this.#othersWord.innerText = 'OTHERS';
         this.#pinnedWord.innerText = 'PINNED';
-        this.#pinnedWord.style = 'margin-bottom: 0;width: 100%; display: block;font-family: monospace; font-size: 15px; font-weight: 600;'
+        this.#pinnedWord.style = 'margin-bottom: 0; width: 100%; display: block;font-family: monospace; font-size: 15px; font-weight: 600;'
 
-        this.#container.style = 'padding-bottom: 60px;grid-column: 2 / 3; display:flex; justify-content: center; align-items: center; height: 100%; width: 100%; background-color: transparent;'
-        this.#pinnedSection.style = 'padding-left: 10px; display:flex; flex-wrap:wrap; justify-content: start; gap: 10px; align-items: baseline; height: auto; width: 900px; max-width: 900px; background-color: transparent;'
+        this.#container.style = 'padding-bottom: 60px; grid-column: 2 / 3; display:flex; justify-content: center; align-items: center; height: 100%; width: 100%; background-color: transparent;'
+        this.#pinnedSection.style = 'padding-left: 10px; display:flex; flex-wrap:wrap; justify-content: start; gap: 10px; align-items: start; height: auto; width: 900px; max-width: 900px; background-color: transparent;'
 
     }
     draw(whereToDraw){
@@ -29,14 +29,12 @@ export class PinnedSection {
     }
     addItem(item){
         this.itemsCounter++ ;
-
         let place = document.getElementById(this.#pinnedSection.id); 
         if (this.itemsCounter > 0) {
             console.log(place)
             let firstElement = place.firstChild;
             place.insertBefore(this.#pinnedWord, firstElement)
         }
-
         console.log(this.itemsCounter)
         if (item instanceof NoteCard) {
             console.log('its a card');

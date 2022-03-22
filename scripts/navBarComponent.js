@@ -5,7 +5,7 @@ export class NavBar {
         this.childrenContainer = document.createElement('div');
 
         this.nav.id = 'navBar';
-        this.nav.style = 'grid-column: 1/3; height: 55px;position: fixed; display: flex; justify-content: center; align-items: center; width: 100%; background-color: white; border-bottom: 1px solid rgba(0,0,0,0.3);';
+        this.nav.style = 'z-index: 1; grid-column: 1/3; height: 55px;position: fixed; display: flex; justify-content: center; align-items: center; width: 100%; background-color: white; border-bottom: 1px solid rgba(0,0,0,0.3);';
         this.childrenContainer.style = 'display: flex; justify-content: center; align-items: center; height: 100%;width: 100%; max-width: 900px; background-color: transparent;'
     }
     draw(whereToDraw){ 

@@ -8,11 +8,14 @@ export class NoteGeneratorComponent {
     #innerTitle = document.createElement('input');
     #innerP = document.createElement('textarea');
     #closeBtn = document.createElement('button');
+    #tooles
+
+
     clicked = false;
 
     constructor(){
         this.#toolsContainer.id = 'toolsContainer';
-        this.#toolsContainer.style = ' display: flex; justify-content: end;height: 30px; background-color: #ddd;'
+        this.#toolsContainer.style = 'position: relative; display: flex; justify-content: end;height: 30px;width: 100%;  background-color: #ddd;'
 
         this.#allFirstContainer.id = 'note-taker';
         this.#allFirstContainer.style = ' margin: 30px 15px;flex: 1 1 100%; width:300px; height: 45px; max-width: 550px; background-color: white; border: 1px solid #cccccc; border-radius: 10px;';
@@ -72,7 +75,7 @@ export class NoteGeneratorComponent {
             this.#innerTitle.placeholder = 'Title here..';
             this.#allFirstContainer.appendChild(this.#innerP);
             this.#allFirstContainer.appendChild(this.#toolsContainer);
-            this.#allFirstContainer.style.height = 'auto';
+            this.#allFirstContainer.style.height = '212px';
             this.#allFirstContainer.style.boxShadow = '0px 2px 6px rgba(0,0,0,0.4)';
             
         }
