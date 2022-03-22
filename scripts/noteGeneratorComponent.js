@@ -68,7 +68,7 @@ export class NoteGeneratorComponent {
         
         this.#allFirstContainer.onmouseover = ()=>{ this.#allFirstContainer.style.cursor = 'text'}
         this.#allFirstContainer.onclick = ()=>{
-            if (this.#allFirstContainer.style.height == 'auto') return;
+            if (this.#allFirstContainer.style.height == '212px') return;
             
             this.#innerTitle.placeholder = 'Title here..';
             this.#allFirstContainer.appendChild(this.#innerP);
@@ -77,8 +77,6 @@ export class NoteGeneratorComponent {
             this.#allFirstContainer.style.boxShadow = '0px 2px 6px rgba(0,0,0,0.4)';
             
         }
-        
-        
         
         
         this.#container.appendChild(this.#allFirstContainer)

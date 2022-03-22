@@ -12,8 +12,6 @@ export class optionsDropDown {
         this.#cardElementDelete.id = 'card-element-delete';
 
         this.#cardElementDelete.innerText = 'delete';
-        
-
 
     }
 }
