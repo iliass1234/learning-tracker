@@ -10,9 +10,14 @@ export class NoteCard {
     #text = document.createElement('p');
     #bottomSection = document.createElement('section');
     #pinButton = document.createElement('button');
+    #threePointsButton = document.createElement('button');
+    #threePointsInnerCard = document.createElement('div');
+    #threePointsInnerCardDelete = document.createElement('a');
+
     activeState = false;
 
     constructor(){
+        
 
         this.isPinned = false;
         this.id = null;

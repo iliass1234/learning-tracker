@@ -8,8 +8,6 @@ export class NoteGeneratorComponent {
     #innerTitle = document.createElement('input');
     #innerP = document.createElement('textarea');
     #closeBtn = document.createElement('button');
-    #tooles
-
 
     clicked = false;
 
