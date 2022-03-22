@@ -20,22 +20,19 @@ export class NoteGeneratorComponent {
         this.#innerP.placeholder = 'Take a note..';
         this.#innerP.id = 'innerP';
         this.#innerP.style = 'height: 100px;overflow: visible; margin-bottom: 10px; width: calc(100% - 30px); display: block; border: none; resize: vertical; max-height: auto; margin-left: 12px;margin-top: 14px; font-family: sans-serif;'
-        
+
         this.#container.id = 'note-taker-container';
         this.#container.style = 'margin-top: 60px; grid-column: 2/3; background-color: white; height: 100%; width: 100%; display: flex; justify-content: center;';
-        
+
         this.#closeBtn.innerText = 'close';
         this.#closeBtn.id = 'close-btn';
         this.#closeBtn.style = 'display: inline-block; justify-self: baseline; height: 30px; width: 80px;'
-        
+
         this.#innerTitle.id = 'innerTitle'
         this.#innerTitle.placeholder = 'Take a note..';
         this.#innerTitle.style = 'margin-bottom:10px ;border: none;height: 30px; max-height: 30px ;width: 100%; max-width: calc(100% - 20px);margin-left: 12px;margin-top: 7px; font-family: sans-serif;';
-
-        
-    }
+    };
     draw(whereToDrawId){
-
         this.#closeBtn.onclick = (e)=>{
             e.stopPropagation();
             let theLastNoteNumber = Number(localStorage.getItem('last-note')) ?? 0 ;

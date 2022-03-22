@@ -1,6 +1,6 @@
 import { PinnedSection } from "/scripts/pinnedSection.js";
 import { CanvasComponent } from "/scripts/canvasComponent.js";
-import { pinnedSection , canvasComponent} from "/scripts/main.js"
+import { pinnedSection , canvasComponent} from "/scripts/main.js";
 
 
 export class NoteCard {
@@ -12,7 +12,6 @@ export class NoteCard {
     #pinButton = document.createElement('button');
     activeState = false;
 
-
     constructor(){
 
         this.isPinned = false;
@@ -23,7 +22,7 @@ export class NoteCard {
 
         this.#pinButton.className = 'card-pin-btn';
         this.#pinButton.innerText = 'Pin';
-        this.#pinButton.style = 'transition: 500ms; opacity: 0; margin: 10px;float: right; display: inline-block;height: 40px; width: 40px; border-radius: 50%; border: none; background-color: #ccc;'
+        this.#pinButton.style = 'transition: 500ms; opacity: 0; margin: 10px;float: right; display: inline-block;height: 40px; width: 40px; border-radius: 50%; border: none; background-color: #ccc;';
 
         this.#card.className = 'card';
         this.#title.id = 'card-title';
@@ -39,7 +38,7 @@ export class NoteCard {
      }
     setId(){
         this.#card.id = this.id;
-        this.#bottomSection.id = `card-bottom-section-${this.id}`
+        this.#bottomSection.id = `card-bottom-section-${this.id}`;
     }
     draw(whereToDrawId){
 
@@ -97,14 +96,13 @@ export class NoteCard {
                 canvasComponent.addCard(newCard);
             }
             
-            localStorage.setItem(`${this.id}-note`, JSON.stringify(data))
+            localStorage.setItem(`${this.id}-note`, JSON.stringify(data));
         }
 
         console.log(this.text)
         let shownText = this.text;
         if (this.text.length > 300) {
-            shownText = this.text.slice(0,300).concat('...')
- 
+            shownText = this.text.slice(0,300).concat('...');
         }
 
         this.#title.innerText = this.title;
